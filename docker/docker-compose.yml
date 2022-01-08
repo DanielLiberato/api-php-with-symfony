@@ -60,3 +60,7 @@ services:
         working_dir: /var/www/project
         networks:
             - nginx-php74-mysql8-node
+    
+volumes:
+    ead_mysql:
+        driver: local
