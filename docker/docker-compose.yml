@@ -28,8 +28,11 @@ services:
         container_name: php74
         ports:
             - "9000:9000"
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
         volumes:
             - ../project_api_symfony:/var/www/project_api_symfony
+            - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
         networks:
             - nginx-php74-mysql8-node
 
